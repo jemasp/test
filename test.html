@@ -1,0 +1,197 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <title>test</title>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8"/>
+
+    <link rel="stylesheet" type="text/css" href="css/normalize.css"/>
+    <link rel="stylesheet" type="text/css" href="css/test1.css"/>
+    <!--
+    <script type="text/javascript" src="lib/mt/mootools-core-1.4.5-full-nocompat.js"></script>
+    <script type="text/javascript" src="lib/mt/mootools-more-1.4.0.1.js"></script>
+    <script type="text/javascript" src="js/checkers.js"></script>
+    -->
+    <script type="text/javascript" src="js/build/checkers.js"></script>
+
+</head>
+<body>
+<!--[if IE 7]>
+<div class="ie7"><![endif]-->
+<!--[if !IE ]><!-->
+<div class="notie">
+    <!--<![endif]-->
+    <form action="#" method="get">
+        <h1>Select Box Substitution </h1>
+
+        <p>works in ie7+, firefox10+, chrome20+</p>
+
+        <h2>initialize one individual select with auto submit</h2>
+	<pre>new CI.StyleableSelective.List(document.getElement('#oneList'), {
+	autoSubmit: true,
+	onOpened: function() {
+		this.substitute.box.addClass('open');
+	},
+	onClosed: function(){
+		this.substitute.box.removeClass('open');
+	}
+});</pre>
+        <select id="oneList" name="oneList" size="1">
+            <option>Heino</option>
+            <option>Michael Jackson</option>
+            <option selected="selected">Tom Waits</option>
+            <option>Nina Hagen</option>
+            <option>Marianne Rosenberg</option>
+            <option>Heino</option>
+            <option>Michael Jackson</option>
+            <option>Tom Waits</option>
+            <option>Nina Hagen</option>
+            <option>Marianne Rosenberg</option>
+            <option>Heino</option>
+            <option>Michael Jackson</option>
+            <option>Tom Waits</option>
+            <option>Nina Hagen</option>
+            <option>Marianne Rosenberg</option>
+            <option>Heino</option>
+            <option>Michael Jackson</option>
+            <option>Tom Waits</option>
+            <option>Nina Hagen</option>
+            <option>Marianne Rosenberg</option>
+            <option>Heino</option>
+            <option>Michael Jackson</option>
+            <option>Tom Waits</option>
+            <option>Nina Hagen</option>
+            <option>Marianne Rosenberg</option>
+        </select>
+
+        <br/><br/>
+
+        <h2>initialize one individual select with auto submit per ajax</h2>
+	<pre>new CI.StyleableSelective.List(document.getElement('#ajax'), {
+	onOpened: function() {
+		this.substitute.box.addClass('open');
+	},
+	onClosed: function(){
+		this.substitute.box.removeClass('open');
+	},
+	onSelected: function(){
+		this.selectBox.getParent('form').send();
+	}
+});</pre>
+        <select id="ajax" name="ajax" size="1">
+            <option>Heino</option>
+            <option>Michael Jackson</option>
+            <option>Tom Waits</option>
+            <option>Nina Hagen</option>
+            <option selected="selected">Marianne Rosenberg</option>
+        </select>
+
+        <br/><br/>
+
+        <h2>initialize a group of individual selects with fixed width</h2>
+	<pre>new CI.StyleableSelective.LinkedLists(document.getElements('select.substitute'), {
+	variableWidth: false,
+	onOpened: function() {
+		this.substitute.box.addClass('open');
+	},
+	onClosed: function(){
+		this.substitute.box.removeClass('open');
+	}
+});</pre>
+        <select id="group1" class="substitute" name="group1" size="1">
+            <option>Heino</option>
+            <option selected="selected">Michael Jackson</option>
+            <option>Tom Waits</option>
+            <option>Nina Hagen</option>
+            <option>Marianne Rosenberg</option>
+        </select><br/>
+        <select id="group2" class="substitute" name="group2" size="1">
+            <option selected="selected">Heino</option>
+            <option>Michael Jackson</option>
+            <option>Tom Waits</option>
+            <option>Nina Hagen</option>
+            <option>Marianne Rosenberg</option>
+        </select><br/>
+        <select id="group3" class="substitute" name="group3" size="1">
+            <option>Heino</option>
+            <option>Michael Jackson</option>
+            <option>Tom Waits</option>
+            <option selected="selected">Nina Hagen</option>
+            <option>Marianne Rosenberg</option>
+        </select>
+
+        <br/><br/>
+
+        <h2>initialize a group of linked selects with variable width</h2>
+	<pre>CI.StyleableSelective.Lists(document.getElements('select.linkedSubstitute'), { 
+	onOpened: function() {
+		this.substitute.box.addClass('open');
+	},
+	onClosed: function(){
+		this.substitute.box.removeClass('open');
+	}
+});</pre>
+        <select id="linked1" class="linkedSubstitute" name="linked1" size="1">
+            <option>Heino</option>
+            <option>Michael Jackson</option>
+            <option>Tom Waits</option>
+            <option selected="selected">Nina Hagen</option>
+            <option>Marianne Rosenberg</option>
+        </select><br/>
+        <select id="linked2" class="linkedSubstitute" name="linked2" size="1">
+            <option>Heino</option>
+            <option>Michael Jackson</option>
+            <option>Tom Waits</option>
+            <option selected="selected">Nina Hagen</option>
+            <option>Marianne Rosenberg</option>
+        </select><br/>
+        <select id="linked3" class="linkedSubstitute" name="linked3" size="1">
+            <option>Heino</option>
+            <option>Michael Jackson</option>
+            <option>Tom Waits</option>
+            <option selected="selected">Nina Hagen</option>
+            <option>Marianne Rosenberg</option>
+        </select>
+
+        <br/><br/>
+
+        <h2>initialize a group of linked selects with variable width and auto submit per ajax</h2>
+	<pre>CI.StyleableSelective.Lists(document.getElements('select.linkedSubstituteAjax'), { 
+	onOpened: function() {
+		this.substitute.box.addClass('open');
+	},
+	onClosed: function(){
+		this.substitute.box.removeClass('open');
+	},
+	onSelected: function(){
+		this.selectBoxes.pick().getParent('form').send();
+	}
+});</pre>
+        <select id="linkedAjax1" class="linkedSubstituteAjax" name="linkedAjax1" size="1">
+            <option>Heino</option>
+            <option selected="selected">Michael Jackson</option>
+            <option>Tom Waits</option>
+            <option>Nina Hagen</option>
+            <option>Marianne Rosenberg</option>
+        </select><br/>
+        <select id="linkedAjax2" class="linkedSubstituteAjax" name="linkedAjax2" size="1">
+            <option>Heino</option>
+            <option selected="selected">Michael Jackson</option>
+            <option>Tom Waits</option>
+            <option>Nina Hagen</option>
+            <option>Marianne Rosenberg</option>
+        </select><br/>
+        <select id="linkedAjax3" class="linkedSubstituteAjax" name="linkedAjax3" size="1">
+            <option>Heino</option>
+            <option selected="selected">Michael Jackson</option>
+            <option>Tom Waits</option>
+            <option>Nina Hagen</option>
+            <option>Marianne Rosenberg</option>
+        </select>
+        <br class="last"/>
+
+    </form>
+</div>
+</body>
+</html>

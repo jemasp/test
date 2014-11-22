@@ -1,0 +1,134 @@
+body {
+    font-size: 12px;
+}
+
+div.substituteMarkup {
+    border: 1px solid #ddd;
+    display: inline-block;
+    position: relative;
+    cursor: default;
+    -moz-user-select: none;
+    vertical-align: middle;
+    background-color: #fff;
+}
+
+.ie7 div.substituteMarkup {
+    display: inline;
+    zoom: 1;
+}
+
+div.substituteMarkup.focus,
+div.substituteMarkup:hover {
+    border: 1px solid #ccc;
+    background: -moz-linear-gradient(top, rgba(246, 248, 249, 1) 0%, rgba(229, 235, 238, 1) 50%, rgba(215, 222, 227, 1) 51%, rgba(245, 247, 249, 1) 100%); /* FF3.6+ */
+    background: -webkit-linear-gradient(top, rgba(246, 248, 249, 1) 0%, rgba(229, 235, 238, 1) 50%, rgba(215, 222, 227, 1) 51%, rgba(245, 247, 249, 1) 100%); /* FF3.6+ */
+}
+
+.ie7 div.substituteMarkup.open {
+    z-index: 1;
+}
+
+div.substituteMarkup.open button.toggleBtn,
+div.substituteMarkup:hover button.toggleBtn {
+    background-color: #999;
+}
+
+span.selectedOption {
+    display: inline-block;
+}
+
+.ie7 span.selectedOption {
+    display: inline;
+    zoom: 1;
+}
+
+button.toggleBtn {
+    background-color: #DDDDDD;
+    border: 1px solid #FFFFFF;
+    padding: 0;
+    position: absolute;
+    right: 0;
+    text-align: center;
+    top: 0;
+    width: 20px;
+    outline: none;
+}
+
+button.toggleBtn span {
+    color: #FFFFFF;
+    display: inline-block;
+    font-size: 1.5em;
+    font-weight: 700;
+}
+
+.ie7 button.toggleBtn span {
+    display: inline;
+    zoom: 1;
+    vertical-align: middle;
+    line-height: 15px;
+    font-size: 1.25em;
+}
+
+button.toggleBtn:active {
+    padding: 0;
+    outline: none;
+}
+
+ul.optionsList {
+    border: 1px solid #CCCCCC;
+    background-color: #fff;
+    display: none;
+    left: -1px;
+    padding: 0;
+    position: absolute;
+    top: 20px;
+    z-index: 1;
+    margin: 0;
+    max-height: 10em;
+    overflow: auto;
+}
+
+ul.optionsList li {
+    list-style-type: none;
+    padding: 0.2em 0.6em;
+    white-space: nowrap;
+}
+
+ul.optionsList li:hover,
+ul.optionsList li.selected {
+    background-color: #999999;
+    color: #FFFFFF;
+}
+
+select {
+    vertical-align: middle;
+    margin-right: 1em;
+}
+
+br {
+    margin-bottom: 1.5em;
+}
+
+br.last {
+    margin-bottom: 10em;
+}
+
+/* to change the size of the box adjust */
+/****************************************/
+span.selectedOption,
+button.toggleBtn, {
+    font-size: 12px; /* set font-size */
+}
+
+span.selectedOption,
+button.toggleBtn {
+    line-height: 20px; /* set height of the box via line-height */
+}
+
+button.toggleBtn span {
+    line-height: 18px; /* has to be 2px smaller than the others*/
+}
+
+span.selectedOption {
+    padding: 0 28px 0 0.3em; /* set spaces: second value is right offset text to button including the space for the button, last value is left offset text to border*/
+}
